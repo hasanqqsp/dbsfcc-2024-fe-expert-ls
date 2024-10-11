@@ -155,6 +155,10 @@ header .navlist.open {
     text-decoration: underline;
     color: #3b855b;
   }
+  #navList > li > a:focus {
+    text-decoration: underline;
+    color: #3b855b;
+  }
 
   .header-content {
     justify-content: start;
@@ -197,5 +201,26 @@ header .navlist.open {
 }
 
 /* TODO 3 : Tambahkan style untuk Skip To Content */
+a.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #3b855b;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  text-decoration: none;
+  border: none;
+}
+.skip-link:focus {
+  top: 0;
+  border-radius: 0px;
+  border-bottom-right-radius: 5px;
+}
 
 /* TODO 4 : Tambahkan style untuk focus */
+:focus {
+  outline: 2px solid #3b855b;
+  outline-offset: 4px;
+  border-radius: 5px;
+}
