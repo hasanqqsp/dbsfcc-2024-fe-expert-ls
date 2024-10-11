@@ -9,20 +9,7 @@ const drawerButton = document.querySelector("#drawer-button");
 const drawerNavigation = document.querySelector("#navList");
 const musicListContainer = document.getElementById("musicList");
 
-function setupDrawer() {
-  drawerButton.addEventListener("click", () => {
-    drawerNavigation.classList.toggle("open");
-  });
-
-  document.body.addEventListener("click", (event) => {
-    if (
-      !drawerNavigation.contains(event.target) &&
-      !drawerButton.contains(event.target)
-    ) {
-      drawerNavigation.classList.remove("open");
-    }
-  });
-}
+function setupDrawer() {}
 
 function stopOtherAudio(currentAudio) {
   const listOfAudioElement = document.querySelectorAll("audio");
@@ -55,7 +42,7 @@ function populateWithTemplate(musics) {
   musicListContainer.append(...elements);
 }
 
-async function usingAsyncAwait() {
+async function loadMusics() {
   showLoading();
 
   try {
@@ -71,6 +58,6 @@ async function usingAsyncAwait() {
 (async function () {
   setupDrawer();
 
-  await usingAsyncAwait();
+  await loadMusics();
   setupOnlyOneAudioIsPlaying();
 })();
