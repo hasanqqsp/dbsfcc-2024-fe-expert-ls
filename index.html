@@ -21,6 +21,7 @@
     <script type="module" src="src/scripts/script.js"></script>
   </head>
   <body>
+    <!-- TODO 2: Tambahkan Skip To Content -->
     <header>
       <div class="container">
         <div class="header-content">
@@ -64,9 +65,9 @@
             />
           </article>
         </section>
-
+        <!-- TODO 1 : tambahkan id pada section yang ingin dijadikan konten utama -->
         <section class="playlist">
-          <h2 class="section-title">Choose Your Productive Music Favorite</h2>
+          <h2 class="section-title">Choose Your Favorite Productive Music</h2>
 
           <div id="musicList" class="music-list"></div>
           <div id="loader" class="text-center">
@@ -109,6 +110,10 @@
               type="audio/mp3"
               preload="none"
             ></audio>
+            <!-- Untuk saat ini kontrol pada HTMLELement <audio> dan <video> belum 
+              aksesibel dengan screen-reader, salah satu alternatif dalam mengatasinya adalah
+              dengan membuat custom elemen seperti yang dijelaskan pada halaman berikut
+              https://developer.mozilla.org/en-US/docs/Learn/Accessibility/Multimedia#creating_custom_audio_and_video_controls -->
           </div>
         </div>
       </article>

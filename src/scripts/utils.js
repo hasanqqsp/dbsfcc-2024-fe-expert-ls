@@ -1,5 +1,3 @@
-
-
 export function generateMusicItemUsingTemplate({
   id,
   artLink,
@@ -26,6 +24,8 @@ export function generateMusicItemUsingTemplate({
 
   const musicAudio = element.getElementById("musicAudio");
   musicAudio.src = audioLink;
+  // TODO 5 : Tambahkan title pada musicAudio
+  musicAudio.setAttribute("title", title);
 
   return element;
 }

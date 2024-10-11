@@ -149,11 +149,13 @@ header .navlist.open {
     text-decoration: none;
     color: #000;
     font-size: 1.09rem;
+    padding: 0.25rem;
   }
   #navList > li > a:hover {
     text-decoration: underline;
     color: #3b855b;
   }
+
   .header-content {
     justify-content: start;
     gap: 2rem;
@@ -193,3 +195,7 @@ header .navlist.open {
     transform: rotate(360deg);
   }
 }
+
+/* TODO 3 : Tambahkan style untuk Skip To Content */
+
+/* TODO 4 : Tambahkan style untuk focus */
