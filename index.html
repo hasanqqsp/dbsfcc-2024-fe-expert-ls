@@ -22,17 +22,13 @@
   </head>
   <body>
     <!-- TODO 2: Tambahkan Skip To Content -->
+    <a href="#main" class="skip-link">Ke Konten Utama</a>
     <header>
       <div class="container">
         <div class="header-content">
-          <div class="brand-name">
-            <a href="/" aria-label="Calm Headphones">
-              <img
-                src="assets/images/calm-logo.png"
-                alt="Calm headphones logo"
-              />
-            </a>
-          </div>
+          <a href="/" aria-label="Calm Headphones" class="brand-name">
+            <img src="assets/images/calm-logo.png" alt="Calm headphones logo" />
+          </a>
 
           <nav id="main-nav">
             <ul id="navList" class="navlist">
@@ -47,34 +43,31 @@
       </div>
     </header>
 
-    <main>
-      <div class="main-content container">
-        <section class="hero">
-          <article class="hero__content">
-            <h2>Be Focus and Productive</h2>
-            <p>
-              Not just an ordinary headphones. It's designed for meditation.
-            </p>
-            <button>Learn more</button>
-          </article>
+    <main class="main-content container">
+      <section class="hero">
+        <article class="hero__content">
+          <h2>Be Focus and Productive</h2>
+          <p>Not just an ordinary headphones. It's designed for meditation.</p>
+          <button>Learn more</button>
+        </article>
 
-          <article class="hero__image">
-            <img
-              src="assets/images/calm-hero.png"
-              alt="A man wearing calm headphones"
-            />
-          </article>
-        </section>
-        <!-- TODO 1 : tambahkan id pada section yang ingin dijadikan konten utama -->
-        <section class="playlist">
-          <h2 class="section-title">Choose Your Favorite Productive Music</h2>
+        <article class="hero__image">
+          <img
+            src="assets/images/calm-hero.png"
+            alt="A man wearing calm headphones"
+          />
+        </article>
+      </section>
+      <!-- TODO 1 : tambahkan id pada section yang ingin dijadikan konten utama -->
 
-          <div id="musicList" class="music-list"></div>
-          <div id="loader" class="text-center">
-            <span class="loader"></span>
-          </div>
-        </section>
-      </div>
+      <section class="playlist" id="main">
+        <h2 class="section-title">Choose Your Favorite Productive Music</h2>
+
+        <div id="musicList" class="music-list"></div>
+        <div id="loader" class="text-center">
+          <span class="loader"></span>
+        </div>
+      </section>
     </main>
 
     <footer>
