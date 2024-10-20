@@ -1,0 +1,103 @@
+/* Jumbotron */
+
+.jumbotron {
+    background-color: #1c1c1d;
+    color: #fff;
+    height: 24rem;
+}
+
+.jumbotron h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.jumbotron p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+.jumbotron > .container {
+    background-image: url("../public/hero-image.jpg");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100%;
+    padding: 2rem;
+}
+p.credit {
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    margin-left: 1rem;
+}
+p.credit a {
+    text-decoration: underline;
+}
+
+/* Card */
+
+.repo-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.repo-card-description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #666;
+    text-align: left;
+}
+
+.repo-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.repo-card-body {
+    display: flex;
+    align-items: start;
+}
+
+.repo-card-body .right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    align-items: start;
+}
+
+@media screen and (min-width: 600px) {
+    .jumbotron h2 {
+        font-size: 2.4rem;
+    }
+    .jumbotron p {
+        font-size: 1.4rem;
+    }
+    .jumbotron .credit {
+        font-size: 1rem;
+    }
+    .jumbotron {
+        height: 30rem;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .jumbotron h2 {
+        font-size: 3rem;
+    }
+    .jumbotron p {
+        font-size: 1.6rem;
+    }
+    .jumbotron .credit {
+        font-size: 1.2rem;
+    }
+}
