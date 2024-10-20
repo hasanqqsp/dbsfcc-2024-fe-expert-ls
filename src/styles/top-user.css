@@ -1,0 +1,38 @@
+/* Card */
+
+.user-card {
+    display: flex;
+    align-items: start;
+}
+
+.user-card .right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    align-items: start;
+}
+
+.user-card-title > h3,
+.user-card-title > p {
+    display: inline-block;
+}
+
+.user-stats {
+    display: flex;
+    gap: 1rem;
+}
+
+.user-stats > p {
+    display: flex;
+    gap: 0.25rem;
+    flex-direction: column;
+}
+.stat-title {
+    font-weight: bold;
+}
+
+.user-bio {
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
