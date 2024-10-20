@@ -1,0 +1,87 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* TODO : Lakukan Styling dengan Mobile-first  */
+
+/* Navbar */
+
+/* Main Section */
+
+/* Footer */
+
+/* Card List */
+
+/* Skip To Content */
+
+/* .skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #1c1c1d;
+    color: #fff;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+    top: 0;
+} */
+
+/* Loading Indicator */
+
+@keyframes l1 {
+    to {
+        transform: rotate(0.5turn);
+    }
+}
+
+.loader {
+    display: "none";
+    margin: 6rem auto;
+    width: 8rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: #1c1c1d #0000;
+    animation: l1 1s infinite;
+}
+
+/* Visually Hidden */
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
