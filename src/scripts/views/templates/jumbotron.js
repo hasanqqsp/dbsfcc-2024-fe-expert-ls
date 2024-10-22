@@ -1,5 +1,5 @@
 export const Jumbotron = {
-    render :  () => {
+    create :  () => {
         return ``
     }
 }
