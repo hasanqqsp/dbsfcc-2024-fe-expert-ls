@@ -1,5 +1,5 @@
 export const Jumbotron = {
-    render :  () => {
+    create :  () => {
         return `<section class="jumbotron">
             <div class="container">
                 <h2>Welcome to GitHub Repo App</h2>
