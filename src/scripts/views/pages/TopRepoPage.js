@@ -1,14 +1,14 @@
-import { GithubLeaderboardAPI } from "../../data/GithubLeaderboardAPI";
-import { RepoCardTemplate } from "../templates/repo-card";
-import "../../../styles/top-repo.css"
-import { Jumbotron } from "../templates/jumbotron";
+import { GithubLeaderboardAPI } from '../../data/GithubLeaderboardAPI'
+import { RepoCardTemplate } from '../templates/repo-card'
+import '../../../styles/top-repo.css'
+import { Jumbotron } from '../templates/jumbotron'
 
 // TODO : Buat Top Repo Page
 export default class TopRepoPage {
-    render(){
-        this._setTitle()
-        return `
-                    ${Jumbotron.render()}
+  render() {
+    this._setTitle()
+    return `
+        ${Jumbotron.create()}
         <section id="main" class="container" tabindex="0">
             <h2>Top Public Repositories</h2>
             <p>Daftar repositori publik dengan jumlah stars terbanyak</p>
@@ -18,30 +18,30 @@ export default class TopRepoPage {
         </section>
 
     `
-    }
+  }
 
-    _hideLoading() {
-        this.loadingIndicator.style.display = "none"
-      }
-    
-    _showLoading() {
-        this.loadingIndicator.style.display = "block"
-    }
+  _hideLoading() {
+    this.loadingIndicator.style.display = 'none'
+  }
 
-    _setTitle(){
-        document.title = 'Top Repositories'
-    }
+  _showLoading() {
+    this.loadingIndicator.style.display = 'block'
+  }
 
-    async afterRender(){
-        this.loadingIndicator = document.querySelector(".loader");
+  _setTitle() {
+    document.title = 'Top Repositories'
+  }
 
-        this._showLoading()
-        const repositoriesData = await GithubLeaderboardAPI.getTopRepositoriesByStars()
-        repositoriesData.forEach(repo => {
-            const repoCard = RepoCardTemplate.create(repo)
-            document.querySelector('.lists').appendChild(repoCard);
-        });
-        this._hideLoading()
+  async afterRender() {
+    this.loadingIndicator = document.querySelector('.loader')
 
-    }
+    this._showLoading()
+    const repositoriesData =
+      await GithubLeaderboardAPI.getTopRepositoriesByStars()
+    repositoriesData.forEach((repo) => {
+      const repoCard = RepoCardTemplate.create(repo)
+      document.querySelector('.lists').appendChild(repoCard)
+    })
+    this._hideLoading()
+  }
 }
