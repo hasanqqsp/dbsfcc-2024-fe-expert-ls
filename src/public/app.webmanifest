@@ -1,0 +1,21 @@
+{
+    "name": "Calm Headphones - Relaxing Music",
+    "short_name": "Calm Music",
+    "icons": [
+        {
+            "src": "icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#3B855B",
+    "background_color": "#f9f5ed",
+    "display": "standalone",
+    "start_url": "/",
+    "id": "com.dicoding.calm-headphones.0.0.1"
+}

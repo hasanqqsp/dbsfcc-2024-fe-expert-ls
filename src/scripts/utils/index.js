@@ -1,4 +1,4 @@
-export function generateMusicItemUsingTemplate({
+function generateMusicItemUsingTemplate({
   id,
   artLink,
   title,
@@ -24,18 +24,53 @@ export function generateMusicItemUsingTemplate({
 
   const musicAudio = element.getElementById("musicAudio");
   musicAudio.src = audioLink;
-  // TODO 5 : Tambahkan title pada musicAudio
   musicAudio.setAttribute("title", title);
 
   return element;
 }
 
-export function showLoading() {
+function showLoading() {
   const musicsLoader = document.getElementById("loader");
   musicsLoader.style.display = "block";
 }
 
-export function hideLoading() {
+function hideLoading() {
   const musicsLoader = document.getElementById("loader");
   musicsLoader.style.display = "none";
+}
+
+
+function stopOtherAudio(currentAudio) {
+  const listOfAudioElement = document.querySelectorAll("audio");
+
+  listOfAudioElement.forEach((audioElement) => {
+    // Others audio will be paused
+    if (currentAudio !== audioElement) {
+      audioElement.pause();
+    }
+  });
+}
+
+function setupOnlyOneAudioIsPlaying() {
+  const listOfAudioElement = document.querySelectorAll("audio");
+
+  listOfAudioElement.forEach((audioElement) => {
+    /**
+     * See: HTMLMediaElement: play event
+     * https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play_event
+     */
+    audioElement.addEventListener("play", (event) => {
+      const currentAudio = event.currentTarget;
+      stopOtherAudio(currentAudio);
+    });
+  });
+}
+
+
+
+module.exports = {
+  generateMusicItemUsingTemplate,
+  showLoading,
+  hideLoading,
+  setupOnlyOneAudioIsPlaying,
 }
