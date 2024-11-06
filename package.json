@@ -8,12 +8,13 @@
     "css-loader": "^7.1.2",
     "github-repo-app": "file:",
     "html-webpack-plugin": "^5.6.2",
-    "http-server": "^14.1.1",
     "style-loader": "^4.0.0",
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0",
-    "webpack-merge": "^6.0.1"
+    "webpack-merge": "^6.0.1",
+    "workbox-webpack-plugin": "^7.3.0",
+    "workbox-window": "^7.3.0"
   },
   "name": "github-repo-app",
   "version": "1.0.0",
@@ -21,7 +22,8 @@
   "main": "src/index.js",
   "scripts": {
     "start-dev": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "serve": "http-server dist --port 9000"
   },
   "repository": {
     "type": "git",
@@ -32,5 +34,8 @@
   "bugs": {
     "url": "https://github.com/hasanqqsp/dbsfcc-2024-fe-expert-ls/issues"
   },
-  "homepage": "https://github.com/hasanqqsp/dbsfcc-2024-fe-expert-ls#readme"
+  "homepage": "https://github.com/hasanqqsp/dbsfcc-2024-fe-expert-ls#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
 }
