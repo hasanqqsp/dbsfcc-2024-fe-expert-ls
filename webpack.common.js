@@ -39,6 +39,14 @@ module.exports = {
             cacheName: 'github-leaderboard-api',
           },
         },
+        {
+          urlPattern: ({ url }) =>
+            url.href.startsWith('https://avatars.githubusercontent.com/u/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'github-users-image',
+          },
+        },
       ],
     }),
     new HtmlWebpackPlugin({
