@@ -1,7 +1,8 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const path = require('path');
- 
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
+
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
@@ -27,6 +28,19 @@ module.exports = {
     ],
   },
   plugins: [
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: './sw.bundle.js',
+      runtimeCaching: [
+        {
+          urlPattern: ({ url }) =>
+            url.href.startsWith('https://github-leaderboard-api.vercel.app/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'github-leaderboard-api',
+          },
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
@@ -40,4 +54,4 @@ module.exports = {
       ],
     }),
   ],
-};
+}
