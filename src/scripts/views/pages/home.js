@@ -1,10 +1,14 @@
-import { getAllMusics } from "../../data/api";
-import { hideLoading, setupOnlyOneAudioIsPlaying, showLoading } from "../../utils";
-import MusicCard from "../templates/music-card";
+import { getAllMusics } from '../../data/api'
+import {
+  hideLoading,
+  setupOnlyOneAudioIsPlaying,
+  showLoading,
+} from '../../utils'
+import MusicCard from '../templates/music-card'
 
 const Home = {
-    async render() {
-      return `
+  async render() {
+    return `
         
             <section class="hero">
                 <article class="hero__content">
@@ -18,7 +22,7 @@ const Home = {
 
                 <article class="hero__image">
                     <img
-                        src="/calm-hero.png"
+                        src="/calm-hero.jpg"
                         alt="A man wearing calm headphones"
                     />
                 </article>
@@ -35,26 +39,25 @@ const Home = {
                 </div>
             </section>
         
-      `;
-    },
-   
-    async afterRender() {
-        document.querySelector("main").classList.add("container")
-        document.querySelector("main").classList.add("main-container");
-        ;
-        showLoading();
-        const musicListContainer = document.getElementById("musicList");
-        try {
-            const musics = await getAllMusics();
-            const musicElements = musics.map((music) => MusicCard.create(music));
-            musicListContainer.append(...musicElements)
-        } catch (error) {
-            console.error("Something went error:", error);
-        } finally {
-            hideLoading();
-            setupOnlyOneAudioIsPlaying();
-        }
-    },
-  };
-   
-  export default Home;
+      `
+  },
+
+  async afterRender() {
+    document.querySelector('main').classList.add('container')
+    document.querySelector('main').classList.add('main-container')
+    showLoading()
+    const musicListContainer = document.getElementById('musicList')
+    try {
+      const musics = await getAllMusics()
+      const musicElements = musics.map((music) => MusicCard.create(music))
+      musicListContainer.append(...musicElements)
+    } catch (error) {
+      console.error('Something went error:', error)
+    } finally {
+      hideLoading()
+      setupOnlyOneAudioIsPlaying()
+    }
+  },
+}
+
+export default Home
