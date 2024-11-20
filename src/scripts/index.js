@@ -5,6 +5,8 @@ import 'lazysizes/plugins/parent-fit/ls.parent-fit'
 
 import '../styles/style.css'
 
+import * as moment from 'moment'
+
 import App from './views/app'
 import swRegister from './utils/swRegister'
 
