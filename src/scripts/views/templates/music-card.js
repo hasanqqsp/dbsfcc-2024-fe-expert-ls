@@ -1,29 +1,29 @@
-
 const MusicCard = {
-    create: ({id,artLink,title,signature,audioLink}) => {
-        const musicItemTemplate = document.getElementById("musicitemtemplate");
+  create: ({ id, artLink, title, signature, audioLink }) => {
+    const musicItemTemplate = document.getElementById('musicitemtemplate')
 
-        const element = musicItemTemplate.content.cloneNode(true);
+    const element = musicItemTemplate.content.cloneNode(true)
 
-        const article = element.querySelector("[data-musicid]");
-        article.setAttribute("data-musicid", id);
+    const article = element.querySelector('[data-musicid]')
+    article.setAttribute('data-musicid', id)
 
-        const musicImage = element.getElementById("musicImage");
-        musicImage.src = artLink;
-        musicImage.alt = title;
+    const musicImage = element.getElementById('musicImage')
+    musicImage.alt = title
+    musicImage.setAttribute('data-src', artLink)
+    musicImage.classList.add('lazyload')
 
-        const musicTitle = element.getElementById("musicTitle");
-        musicTitle.textContent = title;
+    const musicTitle = element.getElementById('musicTitle')
+    musicTitle.textContent = title
 
-        const musicSignature = element.getElementById("musicSignature");
-        musicSignature.innerHTML = signature;
+    const musicSignature = element.getElementById('musicSignature')
+    musicSignature.innerHTML = signature
 
-        const musicAudio = element.getElementById("musicAudio");
-        musicAudio.src = audioLink;
-        musicAudio.setAttribute("title", title);
+    const musicAudio = element.getElementById('musicAudio')
+    musicAudio.src = audioLink
+    musicAudio.setAttribute('title', title)
 
-        return element;
-    }
+    return element
+  },
 }
 
-module.exports = MusicCard;
+module.exports = MusicCard
