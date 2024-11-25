@@ -63,6 +63,27 @@ module.exports = {
       analyzerMode: 'server',
       openAnalyzer: true,
     }),
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: './sw.bundle.js',
+      runtimeCaching: [
+        {
+          urlPattern: ({ url }) =>
+            url.href.startsWith('https://github-leaderboard-api.vercel.app/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'github-leaderboard-api',
+          },
+        },
+        {
+          urlPattern: ({ url }) =>
+            url.href.startsWith('https://avatars.githubusercontent.com/u/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'github-users-image',
+          },
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
