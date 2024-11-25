@@ -1,0 +1,6 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "always"
+	},
+	"files.eol": "\n" // Use "\r\n" for Windows line endings
+}

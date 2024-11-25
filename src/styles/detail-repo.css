@@ -1,0 +1,87 @@
+.repo-badges > span {
+    display: inline-block;
+    padding: 0.5rem 0.7rem;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+.repo-badges {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.repo-detail-body img {
+    max-width: 25rem;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.repo-detail-body {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+}
+
+.repo-detail-body .right {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-direction: column;
+    width: fit-content;
+    flex-grow: 1;
+}
+.repo-detail-body .repo-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    color: #666;
+    justify-content: center;
+}
+
+.top-contributor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.top-contributor h3 {
+    font-size: 1.5rem;
+}
+
+.contributor-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.repo-detail-body .visit-github {
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    background-color: #666;
+    height: fit-content;
+    border-radius: 5px;
+    color: white;
+    height: 44px;
+    font-size: 1.2rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+
+    width: fit-content;
+    margin: 1rem auto;
+}
+
+.repo-detail-body p {
+    text-align: center;
+}

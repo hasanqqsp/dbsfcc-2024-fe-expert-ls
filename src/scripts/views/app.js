@@ -1,8 +1,7 @@
-import routes from "../routes/routes";
-import SidebarInitiator from "../utils/sidebar-initiator";
-import NotFoundPage from "./pages/NotFoundPage";
-
-// TODO : Siapkan Class App
+import routes from '../routes/routes';
+import UrlParser from '../routes/url-parser';
+import SidebarInitiator from '../utils/sidebar-initiator';
+import NotFoundPage from './pages/NotFoundPage';
 
 class App {
   constructor({ showButton, closeButton, sidebar, overlay, content }) {
@@ -24,14 +23,15 @@ class App {
   }
 
   async renderPage() {
-    let page = routes[window.location.hash.slice(1) || "/"];
+    const url = UrlParser.parseActiveUrlWithCombiner();
+    let page = routes[url];
     if (!page){
-        page = NotFoundPage
+      page = NotFoundPage;
     }
     this._content.innerHTML = await page.render();
     await page.afterRender();
-    
-  } 
+
+  }
 }
 
 export default App;

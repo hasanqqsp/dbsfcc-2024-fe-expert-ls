@@ -1,10 +1,10 @@
-import { formatNumber } from "../../utils/format-number";
-// TODO : Template Untuk User Card 
+import { formatNumber } from '../../utils/format-number';
+
 export const UserCardTemplate = {
-    create : (user) => {
-        const card = document.createElement('div');
-        card.classList.add('user-card','card');
-        card.innerHTML = 
+  create : (user) => {
+    const card = document.createElement('div');
+    card.classList.add('user-card', 'card');
+    card.innerHTML =
         `
             <img src="${user.avatar_url}" alt="${user.name} avatar" class="card-avatar">
             <div class="right">
@@ -22,7 +22,7 @@ export const UserCardTemplate = {
                 <a aria-label="Kunjungi di Github" target="_blank" href="${user.html_url}" class="visit-github"><i class="fa-brands fa-github"></i> Kunjungi Profil</a>
                 
             </div>
-        `
-        return card
-    }
-}
+        `;
+    return card;
+  }
+};
